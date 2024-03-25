@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+## 📋핵심적인 웹 지표 (Core Web Vital)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+핵심적인 웹 시표는 구글에서 만든 자료로, 실제 사용 데이터에 따른 페이지의 성능을 보여주는 지표이다.
 
-## Available Scripts
+> 핵심 웹 지표
+>
+> > LCP (Largest Contentful Paint) : 최대 콘텐츠풀 페인트
+> > FID (First Input Delay) : 최초입력 지연
+> > CLS (Cumulative Layout Shift) : 누적 레이아웃 이동
 
-In the project directory, you can run:
+> 특정 문제 진단시 필요한 지표
+>
+> > TTFB (Time To First Byte) : 최초 바이트까지의 시간
+> > FCP (First Contantful Paint) : 최초 컨텐츠풀 시간
 
-### `npm start`
+웹 지표를 토대로 페이지 성능을 확인하는 도구를 살짝 짚고 시작하겠다!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔧페이지 성능 측정도구
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(1) React-profiler
+(2) 구글 라이트하우스 사용 => 점수 나옴
+(3) 네트워크 및 메모리 탭
 
-### `npm test`
+## 🔍LCP : 최대 콘텐츠풀 페인트??
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+LCP는 사용자가 URL을 요청한 시접부터 페이지내에서 가장 큰 콘텐츠를 그리는데 걸리는 시간이다.
+즉, 사용자의 기기가 노출하는 뷰포트 내부에서 가장 큰 요소가 렌더링 되는데 얼마나 걸리는지 측정한다.
+이는 **사용자에게 페이지 정보를 화면에 전달하는 속도를 객관적으로 판단할수 있겠다.**
 
-### `npm run build`
+### 📎기준점수
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 2.5초 이내: 좋음
+> 4초 이내: 보통
+> 그 이상: 나쁨
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📎개선방법
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   image 보다 text -당연히 img 보다는 text가 LCP 점수를 높인다.
 
-### `npm run eject`
+-   image 최적화 -코드에서 이미지를 불러올때는 다양한 방법이 존재한다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+//img 태그
+<img src= "***"/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-이미지 태그를 저렇게 사용한다면 가장 먼저 발견되어 빠르게 요청이 일어난다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+//svg 태그
+<svg xmlns="">
+	<img href="***"/>
+</svg>
+```
 
-## Learn More
+-svg태그로 묶어 사용시 모든 리소스를 다 불러온 후 이미지를 불러온다. 그냥 img 태그보단 느리다고한다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+<div style="background-image: ***"></div>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-태그 안 css 스타일을 주는것은 브라우저가 해당 리소스를 필요로하는 DOM을 그릴때까지 리소스 요청을 뒤로 미루기때문에 지양하는것이 좋다.
 
-### Code Splitting
+-   사용하지 않는 CSS 제거
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   애니메이션 효과 지양 -애니메이션 처리하는 과정은 LCP점수를 떨어뜨린다.
 
-### Analyzing the Bundle Size
+## 🔍CLS : 누적 레이아웃 이동??
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+CLS는 페이지의 생명주기 동안 발생하는 모든 이동에 대한 지표를 계산한것이다.
+최초 렌더링이 시작된 위치에서 레이아웃 이동이 발생하면 누적 레이아웃 이동 점수로 기록된다.
+이때 사용자의 액션으로 인한 레이아웃 이동은 포함되지 않는다.
 
-### Making a Progressive Web App
+### 📎기준점수
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> 0.1 이하: 좋음
+> 0.25이하 보통
+> 그 외: 나쁨
 
-### Advanced Configuration
+### 📎개선방법
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-   CSS / JS 코드 최적화
+    -useEffect와 같은 내부에서 요소에 영향을 미치는 작업이나 뷰포트에서 노출될 확률이 높은 작업은 최소화 시키는것이 좋다고한다.
 
-### Deployment
+-   스켈레톤 UI를이용한 추가적인 공간 확보 -삽입이 예상되는 요소를 위해 스켈레톤으로 미리 무언가 동적으로 뜰것으로 예상되는 공간을 미리 확보해두면 좋다고한다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-   반응형 웹사이트 만들때, 이미지 크기 -사용자 기기의 크기에 따라 반응하는 반응형 웹사이트는 자칫하면 해당 이미지의 높이나 너비를 명확하게 알지 못해 레이아웃 이동이 크게 발생한다. 이때 `auto` 로 설정하지 않고 직접적으로 지정하게 되면 레이아웃 이동이 크게 발생하지 않고 , 다른 방안으로는 `srcset 속성` 을 이용하는것도 좋다.
 
-### `npm run build` fails to minify
+## 🔍FID : 최초 입력 지연??
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+웹 페이지가 사용자의 동작(클릭, 입력, 터치 등) 에 반응할때까지 걸리는 시간이다.
+화면이 그려지고 난 뒤 사용자가 상호작용을 수행했을때 이 이벤트에 대한 반응을 할 수 있을때 까지의 소요되는 시간을 의미한다.
+즉, **사용자가 웹페이지의 응답을 받을 수 있는지 측정할 수 있다.**
+
+### 📎기준점수
+
+> 100ms 이내 : 좋음
+> 300ms 이내: 보통
+> 이후 : 나쁨
+
+### 📎개선방법
+
+-   실행에 오래 걸리는 긴 task 를 따로 분리 -웹페이지에서 해야하는 작업인지를 생각하여 따로 분리한다면 좋을것이다.
+-   자바스크립트 코드 최소화
