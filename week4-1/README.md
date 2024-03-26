@@ -4,28 +4,32 @@
 - 웹 사이트가 검색 엔진 결과에 표시되는 위치에 영향을 미치는 세 가지 웹 성능 측정값
   - **<span style="color: #E12301">가장 기본적인 핵심 요소 세 가지 : LCP, FID, CLS</span>**
 - 사용자 경험을 측정하는 데 사용되는 중요한 웹 성능 지표의 모음(구글의 표준화된 측정 항목 집합)
-  - **<span style="color: #E12301">웹 페이지의 로드 시간, 상호 작용 가능성 및 안정성</span>**을 측정하여 사용자가 웹 페이지를 얼마나 잘 경험하는지에 대한 통찰력을 제공
+  - <span style="color: #E12301; fontWeight: 700px">웹 페이지의 로드 시간, 상호 작용 가능성 및 안정성</span>을 측정하여 사용자가 웹 페이지를 얼마나 잘 경험하는지에 대한 통찰력을 제공
 
 <div style="border: 2px solid #eee; borderRadius: 15px; padding: 20px">
 <span style="fontWeight: 700; fontSize: 20px; color: orange">
   💡 측정 주요 항목 </span>
 
 - **LCP** (**Largest Contentful<sup style="color: #E12301">\*</sup> Paint,** 최대 콘텐츠풀 페인트)
+
   ⇒ 로딩 속도를 측정하는 Paint
-  > **[LCP에서 콘텐츠로 판단하는 요소]**
-  >
-  > 1. img 요소
-  > 2. svg 내의 image 요소
-  > 3. 미리보기, 이미지가 사용되는 video
-  > 4. url()함수와 같이 이미지가 백그라운드로 로드되는 요소
-  > 5. 텍스트를 포함하는 Block 레벨의 요소
-  > 6. 텍스트를 포함하는 인라인 레벨의 요소
-  - 웹 페이지가 완전히 로드되는 데 걸리는 시간을 측정하는 것이 아니라, <span style="fontWeight: 700; backgroundColor: #90E0A9">가장 중요한 부분이 로드되는 시점</span>에만 집중
-  <div style="color: #E12301; fontSize: 12px; border: 1px solid #eee; borderRadius: 15px; padding: 20px; backgroundColor: #A8E0DB">
-    <span style="fontWeight: 700">가장 중요한 부분이 로드되는 시점이란?</span>
-    <br>- 뷰포트 내에서 가장 큰 페이지 요소(큰 텍스트 블록, 이미지 또는 비디오)를 표시하는데 걸리는 시간 <br/>- 사용자가 페이지의 가장 큰 콘텐츠 요소를 볼 때 까지 걸리는 시간 <br/><span style="color: gray; fontSize: 12px">* 뷰포트 : 웹 페이지 사용자가 별도의 스크롤 없이 볼 수 있는 영역</span></div>
-  - 전체 웹 페이지를 로드하는 데 걸리는 시간을 측정하지는 않지만, 웹 페이지가 얼마나 빠르게 로드되고 있는지를 나타내는 좋은 벤치마크 제공
-  - Google의 가이드라인에서는 **2.5초 미만인 경우** LCP 측정값을 <span style="color: green" >**“양호”**</span>로 분류
+
+> **[LCP에서 콘텐츠로 판단하는 요소]**
+>
+> 1. img 요소
+> 2. svg 내의 image 요소
+> 3. 미리보기, 이미지가 사용되는 video
+> 4. url()함수와 같이 이미지가 백그라운드로 로드되는 요소
+> 5. 텍스트를 포함하는 Block 레벨의 요소
+> 6. 텍스트를 포함하는 인라인 레벨의 요소
+
+- 웹 페이지가 완전히 로드되는 데 걸리는 시간을 측정하는 것이 아니라, <span style="fontWeight: 700; backgroundColor: #90E0A9">가장 중요한 부분이 로드되는 시점</span>에만 집중
+<div style="color: #E12301; fontSize: 12px; border: 1px solid #eee; borderRadius: 15px; padding: 20px; backgroundColor: #A8E0DB">
+  <span style="fontWeight: 700">가장 중요한 부분이 로드되는 시점이란?</span>
+  <br>- 뷰포트 내에서 가장 큰 페이지 요소(큰 텍스트 블록, 이미지 또는 비디오)를 표시하는데 걸리는 시간 <br/>- 사용자가 페이지의 가장 큰 콘텐츠 요소를 볼 때 까지 걸리는 시간 <br/><span style="color: gray; fontSize: 12px">* 뷰포트 : 웹 페이지 사용자가 별도의 스크롤 없이 볼 수 있는 영역</span></div
+
+- 전체 웹 페이지를 로드하는 데 걸리는 시간을 측정하지는 않지만, 웹 페이지가 얼마나 빠르게 로드되고 있는지를 나타내는 좋은 벤치마크 제공
+- Google의 가이드라인에서는 **2.5초 미만인 경우** LCP 측정값을 <span style="color: green" >**“양호”**</span>로 분류
 
 > 📌 <span style="color: #3A56E0; fontWeight: 700" >LCP 측정값에 따른 성능</span>
 
@@ -60,12 +64,12 @@
   > ❓ **그렇다면 사용자가 기대한 레이아웃의 움직임이란?**
   >
   > 1. 웹 페이지 내에서 마우스 클릭이나 키보드 입력 등 **이벤트를 발생시킨 시점**부터 0.5초 이내에 움직이는 것
+  > 2. **transform과 같이 CSS에 의한 애니메이션 이동**은 측정에서 제외
+  >    엘리먼트 요소의 이동은 페이지 내 콘텐츠에 대한 강조 혹은 안내를 유도하는 요소로 사용될 수 있고, 이는 유저에게 더 좋은 UX를 제공할 수 있다.
 
     <div style="color: #E12301; fontSize: 14px; border: 1px solid #eee; borderRadius: 15px; padding: 20px; backgroundColor: #A8E0DB"><span style="fontWeight: 700">* 주의 *</span></br>- 사용자 입력이 아닌 마우스 이동, 마우스 스크롤, hover 등의 이벤트에 대해서는 여전히 레이아웃 움직임에 대해 측정 <br/>- Infinite Scroll 기능은 CSL 수치에 많은 영향을 끼칠 수 있다. </div>
-    >2. **transform과 같이 CSS에 의한 애니메이션 이동**은 측정에서 제외
-    엘리먼트 요소의 이동은 페이지 내 콘텐츠에 대한 강조 혹은 안내를 유도하는 요소로 사용될 수 있고, 이는 유저에게 더 좋은 UX를 제공할 수 있다.
-    - 모바일 중심의 지표
-    - 페이지의 콘텐츠가 로드되는 동안 레이아웃이 얼마나 안정적인지 측정
+  - 모바일 중심의 지표
+  - 페이지의 콘텐츠가 로드되는 동안 레이아웃이 얼마나 안정적인지 측정
     (= 페이지 요소가 화면에서 얼마나 자주 이동하는지 측정)
     - 페이지를 스크롤하거나 클릭할 때 의도하지 않은 레이아웃 변경이 발생하는 정도
     (**화면 요소의 이동** ex. 광고, 이미지 및 기타 레이아웃 요소 )
@@ -109,3 +113,21 @@
   > **- 3초 이상** : 나쁨
 
 </div>
+
+<aside>
+❓ **SEO에서 CWV이 중요한 이유**
+
+⇒ Google에서는 좋은 사용자 경험을 제공하는 웹 사이트에 우선 순위를 두고 싶다는 점을 분명히 밝혔으며, 코어 웹 바이탈은 그러한 경험을 측정하는 한 가지 방법이다.
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/82ae878c-ca02-4376-af7c-923e43d1eba2/a1edb634-f3a9-4c93-8263-611f842d42c9/Untitled.png)
+
+1. 사용자 경험 개선
+2. 검색 엔진 순위
+3. 모바일 최적화
+4. 경쟁 우위 확보
+
+</aside>
+
+    *참고자료
+    https://www.cloudflare.com/ko-kr/learning/performance/what-are-core-web-vitals/
+    https://web.dev/articles/ttfb?hl=ko
