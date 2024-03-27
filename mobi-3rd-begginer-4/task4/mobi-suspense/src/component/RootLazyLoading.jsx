@@ -11,8 +11,9 @@ const RootLazyLoading = () => {
     return (
         <div>
             {data}
-            <Suspense fallback={<div>Loading....</div>} />
-            <SpittingLazyLoading />
+            <Suspense fallback={<div>Loading...</div>}>
+                <SpittingLazyLoading />
+            </Suspense>
         </div>
     );
 };
