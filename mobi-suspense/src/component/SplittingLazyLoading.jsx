@@ -8,6 +8,8 @@ const fetchingData = promiseWrapper(
 const SpittingLazyLoading = () => {
   const data = fetchingData.read();
 
-  return <div>{data}</div>;
+  return(
+    <div>{data}</div>
+  );
 };
 export default SpittingLazyLoading;
