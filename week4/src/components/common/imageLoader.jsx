@@ -11,6 +11,7 @@ const ImageLoader = ({ src, sizes, srcSet }) => {
 			{loading && <SkeletonMain />}
 			<ImageWrapper>
 				<Image
+					alt="image"
 					fetchPriority="high"
 					src={src}
 					sizes={sizes}
