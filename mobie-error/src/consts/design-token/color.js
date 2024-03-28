@@ -14,5 +14,12 @@ export const COLORS = {
     POSITIVE_GREEN: '#3EDB00',
     NOTICE: '#DB8A00',
   },
-  THEME: {},
+  THEME: {
+    500: '#0700DB',
+    400: '#3B69DB',
+    300: '#3BDBB4',
+    200: '#3BCEDB',
+    100: '#3B9BDB',
+    0: '#84B8DB',
+  },
 }

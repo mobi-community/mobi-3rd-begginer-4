@@ -1,3 +1,3 @@
 import Home from './home'
-
-export { Home }
+import ErrorList from './error-list'
+export { Home, ErrorList }
