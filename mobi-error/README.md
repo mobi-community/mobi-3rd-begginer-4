@@ -21,7 +21,7 @@ https://github.com/mobi-community/mobi-3rd-begginer-4/assets/50646145/39fd7838-4
 
 ## 🛠 환경 구성
 - 핵심 라이브러리: React
-- 언어: TypeScript
+- 언어: JavaScript
 - 패키지관리: Yarn
 - 빌드 도구: Vite
 
