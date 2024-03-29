@@ -98,5 +98,10 @@
 ## Task 2
 [배포한 사이트 LightHouse로 문제점 개선하기](https://velog.io/@skek298/LightHouse로-진단해서-나온-문제점-개선)
 
+## Task 3
+[이미지 지연 로딩 하기 및 스켈레톤 적용](https://github.com/PurpleDynamics/OmegaBox.git)
+- 기존에 진행했던 웹 사이트의 옵저버에 적용했습니다.
+- Task2, Task3 같이 진행했습니다.
+
 ## Task 6
 [Vite vs Webpack](https://velog.io/@skek298/vite와-webpack의-빌드-차이)
