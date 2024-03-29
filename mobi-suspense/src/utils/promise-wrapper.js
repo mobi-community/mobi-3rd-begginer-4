@@ -4,10 +4,12 @@ export const promiseWrapper = (promise) => {
 
   const s = promise.then(
     (value) => {
+      console.log(value)
       status = "success";
       result = value;
     },
     (error) => {
+      console.log(error)
       status = "error";
       result = error;
     }

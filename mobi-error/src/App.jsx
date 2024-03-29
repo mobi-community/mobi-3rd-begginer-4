@@ -1,56 +1,51 @@
-import Button from './component/Button'
+import {Suspense} from 'react'
+import {ErrorBoundary} from 'react-error-boundary'
+import {useNavigate, useSearchParams} from 'react-router-dom'
+import ErrorFallback from './component/ErrorFallback'
+import LoadingFallback from './component/LoadingFallback'
+import SearchResult from './component/SearchResult'
+
 const App = () => {
+	const [params, setParams] = useSearchParams()
+	const navigate = useNavigate()
+
+	const keyword = params.get('keyword')
+
+	const onSearch = (e) => {
+		e.preventDefault()
+		const inputValue = e.target.elements[0].value
+		setParams({keyword: inputValue})
+	}
+
 	return (
-		<main style={$Main}>
-			<p>💀 놀라움과 신비로움이 가득한 🐒</p>
-			<h2>[제목] 웹사이트 🌈</h2>
-			<div style={{...$Spacer, height: '15rem'}} />
-			<div style={$ButtonWrapper}>
-				<Button themeColor='red'>401</Button>
-				<Button themeColor='yellow'>402</Button>
-				<Button themeColor='blue'>403</Button>
-				<Button themeColor='green'>404</Button>
-				<Button themeColor='violet'>401</Button>
-				<Button themeColor='orange'>402</Button>
-				<Button themeColor='gray'>403</Button>
-				<Button themeColor='skyBlue'>404</Button>
+		<div className='w-dvw h-dvh flex justify-center items-center flex-col gap-10'>
+			<h3>🌈 알흠다운 검색 사이트 📄</h3>
+			<form
+				onSubmit={onSearch}
+				className='w-full h-fit flex justify-center gap-5'
+			>
+				<input className='text-center text-gray-500 rounded-md' />
+				<button
+					type='submit'
+					className='w-fit h-fit px-2 py-1 border-solid rounded-md border-black border-2 active:bg-gray-600'
+				>
+					search
+				</button>
+			</form>
+			<div className='w-full h-64 flex flex-col justify-start items-center'>
+				<ErrorBoundary
+					FallbackComponent={ErrorFallback}
+					onReset={() => {
+						navigate('/')
+					}}
+				>
+					<Suspense fallback={<LoadingFallback />}>
+						{keyword && <SearchResult />}
+					</Suspense>
+				</ErrorBoundary>
 			</div>
-		</main>
+		</div>
 	)
 }
 
 export default App
-
-const $Main = {
-	width: '100dvw',
-	minWidth: '100dvw',
-	maxWidth: '100dvw',
-	height: '100dwh',
-	minHeight: '100dvh',
-	maxHeight: '100dvh',
-
-	background: '#ededed',
-	color: '#0a0a0a',
-	fontWeight: '100',
-
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
-	flexDirection: 'column',
-}
-const $Spacer = {
-	display: 'inline-block',
-}
-const $ButtonWrapper = {
-	width: '100%',
-	height: '5rem',
-	display: 'flex',
-	justifyContent: 'space-around',
-	alignItems: 'center',
-	flexWrap: 'wrap',
-	gap: '0.1rem',
-}
-const $Button = {
-	backgroundColor: 'transparent',
-	color: '#000',
-}
