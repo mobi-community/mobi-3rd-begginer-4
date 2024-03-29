@@ -4,7 +4,7 @@ import { ErrorBoundary } from "react-error-boundary";
 
 function ErrorFallback(err) {
     if (err.error.status === 401) {
-        console.log(err.error.message);
+        return <div>인증되지 않은 회원입니다 </div>;
     }
     if (err.error.status === 404) {
         return <div>페이지를 찾을 수 없습니다.</div>;
@@ -15,7 +15,7 @@ function ErrorFallback(err) {
 function App() {
     return (
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <ErrorComponent error={404} />
+            <ErrorComponent error={401} />
         </ErrorBoundary>
     );
 }
