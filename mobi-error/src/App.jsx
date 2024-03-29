@@ -5,17 +5,18 @@ import ErrorFallback from './component/ErrorFallback'
 import LoadingFallback from './component/LoadingFallback'
 import SearchResult from './component/SearchResult'
 import Button from './component/common/Button'
+import {URL_PARAM} from './constants/url-param'
 import {fetchSearchResultNumber} from './utils/search-fetch'
 
 const App = () => {
 	const [params, setParams] = useSearchParams()
 	const navigate = useNavigate()
-	const keyword = params.get('keyword')
+	const keyword = params.get(URL_PARAM.KEYWORD)
 
 	const onSearch = (e) => {
 		e.preventDefault()
 		const inputValue = e.target.elements[0].value
-		setParams({keyword: inputValue})
+		setParams({[URL_PARAM.KEYWORD]: inputValue})
 	}
 
 	return (
