@@ -1,8 +1,9 @@
-# React + Vite
+error boundary 사용하는곳 특정하기위해 정보 검색 결과 :
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. 전체 컴포넌트 를 하나로 묶는것에서는 어느곳에서 에러가 생겼는지 특정할수가없다 ...
+2. 세세하게 묶는다 (각각의 컴포넌트 하나마다) 문제점 : 1 . 2~3번 과제처럼 최적화가 필요하게된다 , 2 : 데이터 를 주고받아야 실행되는 것에서 오류가 생겨 흐름에 문제가 생길수있다 (혼란스럽다)
+3. 해결점 ? : 기능별로 사용할줄 알아야한다
 
-Currently, two official plugins are available:
+ui 400 500 성공 을 만들어야한다 어떻게 작성을 해볼까
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+버튼으로 클릭할대마다 몇번 에러가 나온다라고 할꺼다
