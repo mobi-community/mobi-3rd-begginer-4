@@ -1,3 +1,3 @@
 import Button from './button'
-
-export { Button }
+import FallbackComponent from './fallback-component'
+export { Button, FallbackComponent }

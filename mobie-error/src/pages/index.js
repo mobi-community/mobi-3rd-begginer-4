@@ -1,3 +1,4 @@
 import Home from './home'
 import ErrorList from './error-list'
-export { Home, ErrorList }
+import ErrorStatus from './error-status'
+export { Home, ErrorList, ErrorStatus }
