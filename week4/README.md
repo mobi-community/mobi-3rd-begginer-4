@@ -95,5 +95,8 @@
     -   크리티컬 패스 최적화
         -   브라우저가 첫 페이지를 렌더링하는 데 필요한 리소스를 우선적으로 로드하도록 HTML, CSS, 자바스크립트의 로딩 순서를 최적화
 
+## Task 2
+[배포한 사이트 LightHouse로 문제점 개선하기](https://velog.io/@skek298/LightHouse로-진단해서-나온-문제점-개선)
+
 ## Task 6
 [Vite vs Webpack](https://velog.io/@skek298/vite와-webpack의-빌드-차이)
