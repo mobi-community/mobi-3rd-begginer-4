@@ -17,6 +17,7 @@
 		@apply w-full;
 		@apply h-full;
 		@apply bg-red-200;
+		@apply overflow-hidden;
 	}
 	h1 {
 		@apply font-king;

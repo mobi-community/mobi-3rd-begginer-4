@@ -1,14 +1,11 @@
-const ErrorFallback = ({error, resetErrorBoundary}) => {
-	const onRetry = () => {
-		console.log('adsf')
-		resetErrorBoundary()
-	}
+import Button from './common/Button'
 
+const ErrorFallback = ({error, resetErrorBoundary}) => {
 	return (
-		<div className='flex flex-col justify-center items-center'>
-			<h3>{error.status && error.status}</h3>
+		<div className='flex flex-col justify-center items-center gap-4'>
+			<h4>{error.statusCode && error.statusCode}</h4>
 			<p>{error.message && error.message}</p>
-			<button onClick={onRetry}>다시 시도하기</button>
+			<Button onClick={resetErrorBoundary}>페이지 새로고침</Button>
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 const LoadingFallback = () => {
-	return <h3>검색 중...</h3>
+	return <h4>검색 중...</h4>
 }
 
 export default LoadingFallback
