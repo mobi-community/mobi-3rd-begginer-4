@@ -1,3 +1,6 @@
+> Vite와 Webpack에 대한 정리</br>
+> velog URL : https://velog.io/@jjjiyoung0130/Vite%EC%99%80-WebPack%EC%9D%98-%EB%B9%8C%EB%93%9C
+
 ### 빌드란?
 
 배포를 하기 위한 선행 과정으로 작성한 코드와 애플리케이션이 사용하는 이미지, CSS 등을 모두 모아서 패키징하는 작업
