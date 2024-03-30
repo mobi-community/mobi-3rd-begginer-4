@@ -95,8 +95,7 @@
     [ 리디렉션 시간 → 서비스 워커 시작 시간(해당하는 경우) → DNS 조회 → 연결 및 TLS 협상 → 요청, 응답의 첫 번째 바이트가 도착할 때 까지 ]
     **\* 연결 설정 시간 및 백엔드에서 지연 시간을 줄이면 TTFB를 줄일 수 있다.**
 
-  > <span style="color: #3A56E0; fontWeight: 700" >📌 **TTFB 측정값에 따른 성능**</span>
-  > **- 800ms 이하** : 좋음
+  > <span style="color: #3A56E0; fontWeight: 700" >📌 **TTFB 측정값에 따른 성능**</span> > **- 800ms 이하** : 좋음
   > **- 800ms 초과 ~ 1800ms 미만** : 개선 필요
   > **- 1800ms 이상** : 나쁨
 
@@ -107,14 +106,12 @@
   - <span style="fontWeight: 700; backgroundColor: #90E0A9">첫 번째 콘텐츠 요소가 랜더링될 때 모든 콘텐츠가 랜더링 되는 것은 아니며,</span> 이는 **“페이지의 기본 콘텐츠가 로드가 완료된 시점을 측정”**하는 **FCP**와 **“최대 콘텐츠 랜더링 시간” LCP**을 구분하는 중요한 차이점
   * **핵심 사항:**
      - FCP에는 이전 페이지의 언로드 시간, 연결 설정 시간, 리디렉션 시간, [첫 바이트까지의 시간 (TTFB)](https://web.dev/articles/ttfb?hl=ko)이 포함된다. 이는 현장에서 측정할 때 중요할 수 있으며 필드 및 실험실 측정 간의 차이로 이어질 수 있다.
-  > <span style="color: #3A56E0; fontWeight: 700" >📌 **FCP 측정값에 따른 성능**</span>
-  > **- 1.8초 이하** : 좋음
-  > **- 1.8초 초과 ~ 3초 미만** : 개선 필요
-  > **- 3초 이상** : 나쁨
+    > <span style="color: #3A56E0; fontWeight: 700" >📌 **FCP 측정값에 따른 성능**</span> > **- 1.8초 이하** : 좋음
+    > **- 1.8초 초과 ~ 3초 미만** : 개선 필요
+    > **- 3초 이상** : 나쁨
 
 </div>
 
-<aside>
 ❓ **SEO에서 CWV이 중요한 이유**
 
 ⇒ Google에서는 좋은 사용자 경험을 제공하는 웹 사이트에 우선 순위를 두고 싶다는 점을 분명히 밝혔으며, 코어 웹 바이탈은 그러한 경험을 측정하는 한 가지 방법이다.
@@ -126,8 +123,26 @@
 3. 모바일 최적화
 4. 경쟁 우위 확보
 
-</aside>
+### 개선방안
 
-    *참고자료
-    https://www.cloudflare.com/ko-kr/learning/performance/what-are-core-web-vitals/
-    https://web.dev/articles/ttfb?hl=ko
+- light house 활용 : 진단 → 개선
+- 이미지 용량 줄이기
+  - jpg, png, webp 등 다양한 포맷이 존재하며, webp 형식을 사용하면 jpg, png보다 크기를 26% 이상 줄일 수 있다.
+    - webp란?
+      구글이 웹페이지 로딩 속도를 높이기 위해 만든 이미지 형식으로,
+      품질은 유지하면서 파일 크기를 더 작게 만드는 무손실 압축 확장자
+- img태그에 alt를 작성하여 SEO 최적화
+- 자바스크립트 줄이기
+  - 사용하지 않는 코드 삭제
+- 콘텐츠가 포함된 최대 페인트 이미지 미리 로드
+  - preloadLink로 head에 image 미리 불러오기
+- 필수 원본 미리 연결하기
+  - public/index.html에 head에 필수 원본 미리 연결
+- 콘텐츠가 포함된 최대 페인트 이미지 미리 로드
+  - preloadLink로 head에 image 미리 불러오기
+- 이미지 요소에 width와 height 명시
+- 레이아웃 쉬프트 개선을 위한 스켈레톤 UI 생성
+
+  \*참고자료
+  https://www.cloudflare.com/ko-kr/learning/performance/what-are-core-web-vitals/
+  https://web.dev/articles/ttfb?hl=ko
