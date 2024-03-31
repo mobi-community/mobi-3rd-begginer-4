@@ -1,13 +1,27 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import ImageLoader from "../components/common/imageLoader";
-import usePreloadImage from "../hooks/usePreloadImage";
 
 const Main = () => {
 	const imgState = useSelector((state) => state.images.imgState);
 
-	usePreloadImage({ url: imgState[0] });
+	// usePreloadImage({ url: imgState[0] });
+
+	useEffect(() => {
+		const preloadLink = document.createElement("link");
+		preloadLink.href = imgState[0];
+		preloadLink.rel = "preload";
+		preloadLink.as = "image";
+		document.head.appendChild(preloadLink);
+
+		return () => {
+			if (preloadLink) {
+				document.head.removeChild(preloadLink);
+			}
+		};
+	}, [imgState[0]]);
 
 	return (
 		<>
@@ -36,5 +50,4 @@ const ImageBox = styled.div`
 const ImageContainer = styled.div`
 	width: 200px;
 	height: 300px;
-	background-color: #ccc;
 `;
