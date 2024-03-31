@@ -5,8 +5,8 @@ import { colors } from "../../constants/design-token/color";
 const SkeletonBase = ({ width, height, borderRadius }) => {
 	return (
 		<S.Skeleton
-			$width={width}
-			$height={height}
+			width={width}
+			height={height}
 			$borderRadius={borderRadius}
 		/>
 	);
@@ -27,8 +27,8 @@ const Skeleton = styled.div`
 	border-radius: ${({ $borderRadius }) => $borderRadius};
 	overflow: hidden;
 	position: relative;
-	width: ${({ $width }) => $width};
-	height: ${({ $height }) => $height};
+	width: ${({ width }) => width};
+	height: ${({ height }) => height};
 
 	&::after {
 		content: "";

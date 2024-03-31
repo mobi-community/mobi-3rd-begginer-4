@@ -12,8 +12,8 @@ import SkeletonBase from "./skeleton-base";
 const SkeletonMain = () => {
 	return (
 		<S.SkeletonWrapper>
-			<SkeletonBase $width="200px" $height="10px" />
-			<SkeletonBase $width="200px" $height="300px" />
+			<SkeletonBase width="200px" height="10px" />
+			<SkeletonBase width="200px" height="300px" />
 		</S.SkeletonWrapper>
 	);
 };
@@ -24,7 +24,7 @@ const SkeletonWrapper = styled.div`
 	height: 310px;
 	display: grid;
 	overflow: hidden;
-	padding: 15px 0;
+	padding: 20px 0;
 `;
 
 const S = {

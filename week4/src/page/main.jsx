@@ -1,27 +1,13 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import ImageLoader from "../components/common/imageLoader";
+import usePreloadImage from "../hooks/usePreloadImage";
 
 const Main = () => {
 	const imgState = useSelector((state) => state.images.imgState);
 
-	// usePreloadImage({ url: imgState[0] });
-
-	useEffect(() => {
-		const preloadLink = document.createElement("link");
-		preloadLink.href = imgState[0];
-		preloadLink.rel = "preload";
-		preloadLink.as = "image";
-		document.head.appendChild(preloadLink);
-
-		return () => {
-			if (preloadLink) {
-				document.head.removeChild(preloadLink);
-			}
-		};
-	}, [imgState[0]]);
+	usePreloadImage({ url: "https://i.ibb.co/Y77K6Kx/456-1.webp" });
 
 	return (
 		<>
