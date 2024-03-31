@@ -1,11 +1,8 @@
 # 🤳Core Web Vital 이란?
 
-(1) **LCP (최대 콘텐츠 풀 페인트)**
-
-(2) **FID (최초 입력 지연)**
-
-(3) **CLS (누적 레이아웃 이동)**
-
+**(1) LCP (최대 콘텐츠 풀 페인트)
+(2) FID (최초 입력 지연)
+(3) CLS (누적 레이아웃 이동)**
 ![](https://velog.velcdn.com/images/chan_snk/post/953362f3-67de-4789-a399-921ab997b2b9/image.png)
 [출처 : web.dev](https://web.dev/explore/learn-core-web-vitals?hl=ko)
 
@@ -14,9 +11,8 @@
 
 그 외에도 
 
-**(4) TTFB (최초 바이트까지의 시간)**
-
-**(5) FCP (최초 콘텐츠 풀 시간)**
+**(4) TTFB (최초 바이트까지의 시간)
+(5) FCP (최초 콘텐츠 풀 시간)**
 
 두가지 지표를 추가해서 다섯 가지를 알아보자.
 ## 😱그 전에...
@@ -66,7 +62,7 @@ LCP의 평가 기준은 아래 그림과 같다.  2.5초 이하일때 좋은 사
 
 (4)TTFB (최초 바이트까지의 시간)란 사용자가 페이지 로딩을 시작하고 브라우저가 HTML 응답으로 첫 바이트를 받아오기까지의 시간을 의미한다.
 
-좋은 사용자 경험을위한 TTFBs는 0.8s 이하라고 한다.
+
 
 
 
@@ -110,18 +106,23 @@ FOUT(Flash Of Unstyled Text) 웹폰트가 로드 되기전까지 대체 폰트�
 
 FOIT(Flash Of Invisible Text) 웹 폰트를 로드하기 전까지 텍스트가 보이지 않는 현상
 
-## 👌(5) FCP (최초 콘텐츠 풀 시간)
+## 👌(4)TTFB (최초 바이트까지의 시간)
+TTFB(Time to First Byte)는 HTTP 요청을 했을때 처음 byte (정보) 가 브라우져에 도달하는 시간을 의미한다.
 
+좋은 사용자 경험을위한 TTFBs는 0.8s 이하라고 한다.
+
+## 👌(5)FCP (최초 콘텐츠 풀 시간)
+
+**최초 콘텐츠풀 페인트(FCP)**는 브라우저가 DOM에서 첫 번째 콘텐츠 비트를 렌더링하여, 페이지가 실제로 로드되고 있다는 첫 번째 피드백을 사용자에게 제공하는 경우이다. FCP 이후에 사용자는 웹 페이지가 로드되어 있다는 것을 느낄 수 있습니다.
+
+1.8초 이하로 유지하는것이 좋다고 한다.
 
  
 
 ### 😁참고자료
 [최적화-핵심적인-웹-지표-개선하기](https://velog.io/@hsecode/%EC%B5%9C%EC%A0%81%ED%99%94-%ED%95%B5%EC%8B%AC%EC%A0%81%EC%9D%B8-%EC%9B%B9-%EC%A7%80%ED%91%9C-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0)
-
 [LCP(Largest Contentful Paint) 최적화하기](https://ui.toast.com/posts/ko_202012101720)
-
 [코어 웹 바이탈 최적화](https://hjk329.github.io/%EC%B5%9C%EC%A0%81%ED%99%94/improve-lcp/)
-
 [web.dev](https://web.dev/articles/lcp?hl=ko#improve-lcp)
 
 
