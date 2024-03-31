@@ -28,7 +28,6 @@ const Main = () => {
 			<ImageBox>
 				{imgState.map((item, index) => (
 					<div key={index}>
-						<p>Title</p>
 						<ImageContainer>
 							<ImageLoader src={item} />
 						</ImageContainer>
@@ -50,4 +49,5 @@ const ImageBox = styled.div`
 const ImageContainer = styled.div`
 	width: 200px;
 	height: 300px;
+	padding: 10px 0;
 `;

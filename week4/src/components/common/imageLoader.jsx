@@ -10,6 +10,7 @@ const ImageLoader = ({ src, sizes, srcSet }) => {
 		<Container>
 			{loading && <SkeletonMain />}
 			<ImageWrapper>
+				<p>Title</p>
 				<Image
 					alt="image"
 					fetchPriority="high"
@@ -34,4 +35,7 @@ const Image = styled.img`
 `;
 const Container = styled.div``;
 
-const ImageWrapper = styled.div``;
+const ImageWrapper = styled.div`
+	width: 200px;
+	height: 310px;
+`;
