@@ -20,8 +20,6 @@ const SkeletonMain = () => {
 export default SkeletonMain;
 
 const SkeletonWrapper = styled.div`
-	width: 200px;
-	height: 310px;
 	display: grid;
 	overflow: hidden;
 	padding: 20px 0;
