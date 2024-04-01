@@ -8,12 +8,10 @@ import GlobalStyle from "./styles/global-style";
 
 function App() {
 	return (
-		<>
-			<Provider store={store}>
-				<GlobalStyle />
-				<Main />
-			</Provider>
-		</>
+		<Provider store={store}>
+			<GlobalStyle />
+			<Main />
+		</Provider>
 	);
 }
 
