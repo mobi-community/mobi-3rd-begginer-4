@@ -14,6 +14,6 @@ React에서 Image Load를 최적화할 수 있는 방법을 생각해보고 Imag
 
 ---
 
-> - 배포 URL : https://pair2-omega3.r-e.kr/
+> - 배포 URL : https://omegabox3.soljk.com/
 > - GITHUB : https://github.com/PurpleDynamics/OmegaBox
 > - velog : https://velog.io/@jjjiyoung0130/LightHouse%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%A7%84%EB%8B%A8-%EB%B0%8F-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94
