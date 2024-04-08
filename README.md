@@ -1,55 +1,70 @@
-# mobi-2th-begginer-4
-### 4주차
-<a href="https://lyrical-brain-e0f.notion.site/mobi-beginner-week-4-27ea4bdc6e3140e3a88355574d1ddeab?pvs=4">@see</a>
+# Getting Started with Create React App
 
-### 기간
-```
-2024.03.24 ~ 2024.03.29 (일요일 리뷰 가능하도록 PR 남기기, 스프레티드시트에 링크 등록)
-2024.03.30 (WIL, 다른 페어 코드 리뷰, 1주차 회고 및 느낀점 발표)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-* 반드시 리드미에 프로젝트 개요와 설명, 시연 영상 등을 함께 작성해주시는 것이 좋습니다 :)
-```
+## Available Scripts
 
-### 페어-편성
-```
-1조
-Jeff - Chan - Riel
+In the project directory, you can run:
 
-2조
-Gang - Wendy - Brilly
-```
+### `npm start`
 
-### 과제
-```
-1. 핵심 웹 지표의 정의와 개선할 수 있는 방안에 대하여 정리
-2. 웹 지표를 확인하고 가이드에 따라 점수를 개선하고 블로그 작성
-3. React Image Lazy load를 적용
-4. React suspense
-5. React errorBoundary
-6. 생각해보기 정리해서 블로그 작성 (esbuild vs webpack)
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 진행방법
-```
-1. 페어는 각자 함께 할 수 있는 시간을 선정합니다.
-2. 시간 선정이 완료되면 mobi 단톡방에 월~일요일 단위로 올려주세요.
-ex)
-  월 
-  - Jeff (14:00 ~ 22:00)
-  - Lucas (08:00 ~ 20:00)
-  - core-time (20:00~22:00) -- 코어 타임은 매일 매일 가져야합니다. 겹치는 시간을 최대한 활용하고 블락킹 된 부분과 풀이한 부분을 공유할 것
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-  화 ...
-  ...
-  목 - 리프레쉬 데이 (같은 페어일 경우 요일 고정)
-  ...
-  일
-  - 20:00~22:00 WIL
-  - 22:00~23:00 1주차 회고 및 느낀점
-  - 23:00~01:00 각 페어 코드 리뷰 -- 반드시 PR로 문서화할 것
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. 과제는 스스로 풀어본 이후에 코어 타임에는 반드시 페어와 함께 고민하고 블락킹 된 부분의 해소와 풀이를 공유해야합니다.
-3. 매일 매일 풀이한 과제는 해당 레포지토리에 브랜치에 Pair-n으로 commit-push 합니다. (리프레쉬 제외 1일 1커밋 준수)
-4. 학습 시간에는 모비 항상 디스코드에 접속해서 학습을 진행해주셔야 합니다.
-```
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
